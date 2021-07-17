@@ -1,0 +1,51 @@
+<?php
+/**
+ * @var \Task\StockData\Block\Adminhtml\Display\Table $block
+ */
+$values = $block->fetchForFiftyToHundred();
+
+$i = 1;
+?>
+<style>
+table, th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+table {
+  border-spacing: 5px;
+}
+</style>
+
+<div class="product-qty-oos">
+    <table class="qty-of-products-in-stock-oos" id="my-qty-table-oos">
+        <thead>
+        <tr>
+            <th scope="col" class="col no"><?php echo __('Sr. No') ?></th>
+            <th scope="col" class="col sku"><?php echo __('SKU') ?></th>
+            <th scope="col" class="col name"><?php echo __('Name') ?></th>
+            <th scope="col" class="col quantity"><?php echo __('Quantity') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php if (isset($values)) {foreach ($values as $pro_id => $value): ?>
+        <tr>
+            <td data-th="<?=$block->escapeHtml(__('Sr. No'))?>" class="col no">
+                <?php echo $i ?>
+            </td>
+            <td data-th="<?=$block->escapeHtml(__('SKU'))?>" class="col sku">
+                <?php echo $value['0'] ?>
+            </td>
+            <td data-th="<?=$block->escapeHtml(__('Name'))?>" class="col name">
+                <?php echo $value['1'] ?>
+            </td>
+            <td data-th="<?=$block->escapeHtml(__('Quantity'))?>" class="col quantity">
+                <?php echo $value['2'] ?>
+            </td>
+        </tr>
+        <?php $i++?>
+        <?php endforeach;?>
+        <?php }?>
+        </tbody>
+    </table>
+</div>

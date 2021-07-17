@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+   <menu>
+        <add id="Task_StockData::stockdata" title="Stock Data" module="Task_StockData" sortOrder="51" resource="Task_StockData::stockdata"/>
+        <add id="Task_StockData::stockfor100" title="Stock 100 or more" module="Task_StockData" sortOrder="10" action="stockdata/create/hundred" resource="Task_StockData::stockdata" parent="Task_StockData::stockdata"/>
+        <add id="Task_StockData::stockfor50" title="Stock 50 to 99" module="Task_StockData" sortOrder="12" action="stockdata/create/fiftytohundred" resource="Task_StockData::stockdata" parent="Task_StockData::stockdata"/>
+        <add id="Task_StockData::stockfor10" title="Stock 10 to 49" module="Task_StockData" sortOrder="14" action="stockdata/create/tentofifty" resource="Task_StockData::stockdata" parent="Task_StockData::stockdata"/>
+        <add id="Task_StockData::stockforalert" title="Stock less than 10" module="Task_StockData" sortOrder="16" action="stockdata/create/ten" resource="Task_StockData::stockdata" parent="Task_StockData::stockdata"/>
+        <add id="Task_StockData::stockout" title="Out of Stock" module="Task_StockData" sortOrder="18" action="stockdata/create/outofstock" resource="Task_StockData::stockdata" parent="Task_StockData::stockdata"/>
+    </menu>
+</config>
