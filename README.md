@@ -8,7 +8,7 @@
   - `sudo php bin/magento setup:upgrade`
   - `sudo php bin/magento setup:di:compile`
   - `sudo php bin/magento setup:static-content:deploy -f`
-  - `sudo php bin/magento indexer:reindex`
+  - `sudo php bin/magento indexer:reindex` (optional)
   - `sudo php bin/magento cache:flush`
   - `sudo chmod 777 -R var/ pub/ generated/`
 - Now, open your web browser and type in the following link to open magento admin (assuming for localhost or else type in https://your-magento-from-ftp/admin) **localhost/magento-root-directory/admin** you will see an admin menu named **STOCK DATA**.
